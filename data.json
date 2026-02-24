@@ -1,0 +1,14 @@
+[
+  {
+    "category": "Programming",
+    "items": ["Python Course", "Java Course", "Web Development"]
+  },
+  {
+    "category": "Gaming",
+    "items": ["Gaming Mouse", "Gaming Keyboard", "Headset"]
+  },
+  {
+    "category": "Fitness",
+    "items": ["Yoga Mat", "Dumbbells", "Protein Powder"]
+  }
+]

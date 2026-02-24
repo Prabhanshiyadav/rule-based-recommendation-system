@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>🤖 Chat Assistant</h2>
+
+    <form method="POST">
+
+        <input type="text" name="message" placeholder="Ask something..." required>
+
+        <button type="submit">Send</button>
+
+    </form>
+
+    {% if response %}
+        <div class="result-card">
+            <b>Bot:</b> {{ response }}
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

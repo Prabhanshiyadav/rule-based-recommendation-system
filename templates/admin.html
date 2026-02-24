@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-container"
+     data-labels='{{ labels | tojson }}'
+     data-values='{{ values | tojson }}'>
+
+    <h1>📊 Admin Dashboard</h1>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+            <h2>{{ total_users }}</h2>
+            <p>Total Users</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ total_recs }}</h2>
+            <p>Total Recommendations</p>
+        </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-card">
+        <h3>📈 Recommendation Analytics</h3>
+        <canvas id="categoryChart"></canvas>
+    </div>
+
+    <!-- Rule Section -->
+    <div class="rule-card">
+
+        <h3>⚙️ Add New Rule</h3>
+
+        <form method="POST">
+            <input type="text" name="condition" placeholder="Condition" required>
+            <input type="text" name="recommendation" placeholder="Recommendation" required>
+            <button type="submit">Add Rule</button>
+        </form>
+
+        <h3>📜 All Rules</h3>
+
+       
+        <ul class="rule-list">
+{% for rule in rules %}
+    <li>
+        {{ rule.condition }} → {{ rule.recommendation }}
+
+        <a href="/delete_rule/{{ rule._id }}" class="delete-btn">
+            ❌ Delete
+        </a>
+    </li>
+{% endfor %}
+</ul>
+    </div>
+
+</div>
+
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    const container = document.querySelector(".admin-container");
+
+    const chartLabels = JSON.parse(container.dataset.labels || "[]");
+    const chartValues = JSON.parse(container.dataset.values || "[]");
+
+    const ctx = document.getElementById("categoryChart").getContext("2d");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: chartLabels,
+            datasets: [{
+                label: "Recommendations by Category",
+                data: chartValues,
+                backgroundColor: [
+                    "#ff6384",
+                    "#36a2eb",
+                    "#ffce56",
+                    "#4bc0c0",
+                    "#9966ff"
+                ]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+</script>
+
+{% endblock %}

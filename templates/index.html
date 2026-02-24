@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>🎯 Get Personalized Recommendations</h2>
+
+    <form method="POST">
+
+        <input type="number" name="age" placeholder="Enter Age" required>
+
+        <select name="interest">
+            <option value="technology">Technology</option>
+            <option value="sports">Sports</option>
+            <option value="music">Music</option>
+            <option value="art">Art</option>
+        </select>
+
+        <button type="submit">Recommend</button>
+
+    </form>
+
+    {% if results %}
+        <h3>✨ Recommendations</h3>
+
+        {% for item in results %}
+            <div class="result-card">
+                {{ item }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock %}
