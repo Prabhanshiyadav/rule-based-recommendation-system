@@ -314,12 +314,14 @@ Unlike ML models, this approach is:
 You can insert screenshots like:
 
 ```
-![Home](screenshots/home.png)
-![Dashboard](screenshots/dashboard.png)
-![Admin](screenshots/admin.png)
-```
+# 📸 Screenshots
 
----
+![Home](screenshots/Home.png)
+![Dashboard](screenshots/Dashboard.png)
+![Login](screenshots/Login.png)
+![Register](screenshots/Register.png)
+![Admin](screenshots/admin.png)
+![Chatbot](screenshots/Chatbot.png)
 
 # 🚀 Future Enhancements
 
