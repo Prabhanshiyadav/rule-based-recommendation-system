@@ -316,13 +316,20 @@ You can insert screenshots like:
 ```
 # 📸 Screenshots
 
+### 🏠 Home
 ![Home](screenshots/Home.png)
-![Dashboard](screenshots/Dashboard.png)
-![Login](screenshots/Login.png)
-![Register](screenshots/Register.png)
-![Admin](screenshots/admin.png)
-![Chatbot](screenshots/Chatbot.png)
 
+### 📊 Dashboard
+![Dashboard](screenshots/Dashboard.png)
+
+### 🔐 Login
+![Login](screenshots/Login.png)
+
+### 📝 Register
+![Register](screenshots/Register.png)
+
+### 🤖 Chatbot
+![Chatbot](screenshots/Chatbot.png)
 # 🚀 Future Enhancements
 
 * AI / Machine Learning Hybrid Model
