@@ -305,9 +305,6 @@ This approach is:
 
 ![Register](screenshots/Register.png)
 
-### ⚙️ Admin
-
-![Admin](screenshots/Admin.png)
 
 ### 🤖 Chatbot
 
